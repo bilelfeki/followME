@@ -1,6 +1,6 @@
 # FollowME
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
+This project is made to build some statistics about famous persons who are followed by another peoples 
 
 ## Development server
 
