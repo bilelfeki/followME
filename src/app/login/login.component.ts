@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,17 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  inputTextDisplay = true ; 
-  constructor() { }
+  public  username ="" ;
+  public password = ""; 
+  submitted = false;
+
+  constructor(private auth : AuthService ) { }
 
   ngOnInit(): void {
   }
-  onclickPassword(){
-    this.inputTextDisplay=!this.inputTextDisplay ; 
-  }
+
   isLogIn():boolean{
     return false 
   }
+  onSubmit() { 
+    console.log("hello")
+    this.auth.login(this.username,this.password).subscribe(data =>
+      console.log(data)
+    )
+   }
+
+
   
 
 }

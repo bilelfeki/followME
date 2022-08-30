@@ -13,7 +13,9 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
   isAuthenticated():boolean{
-    return this.authService.isAuthenticated()
+    return this.authService.isAuthenticated(); 
   }
-
+  onLogOut(){
+    this.authService.logout();
+  }
 }

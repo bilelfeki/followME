@@ -1,6 +1,4 @@
 <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-
-
     <div  class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
       <div *ngIf="isAuthenticated()"class="text-sm lg:flex-grow">
     
@@ -18,13 +16,16 @@
       <div>
         <a routerLink="/welcome" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Welcome</a>
       </div>
-      <div>
-        <a routerLink="/login" class="ml-6 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Login</a>
+      <div *ngIf="!isAuthenticated()">
+        <div>
+          <a routerLink="/login" class="ml-6 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Login</a>
+        </div>
+        <div>
+          <a routerLink="/sign up" class="ml-6 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">sign up</a>
+        </div>
       </div>
-      <div>
-        <a routerLink="/sign up" class="ml-6 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">sign up</a>
+      <div *ngIf="isAuthenticated()">
+        <a (click)="onLogOut()" class="ml-6 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">log out</a>
       </div>
-     
-      
     </div>
   </nav>

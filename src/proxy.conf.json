@@ -1,0 +1,14 @@
+{
+  "/dev": {
+    "target": "http://localhost:65309",
+    "secure": false,
+    "logLevel":"debug",
+    "ws":true,
+    "pathRewrite": {
+      "^/dev": "/api"
+    },
+    "router" : {
+      "http://localhost:4200/api/Auth" : "https://localhost:65309/api/Auth"
+    }
+  }
+}
